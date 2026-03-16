@@ -15,11 +15,13 @@ import re
 
 
 # ----- Database things ---
-POSTGRES_DATABASE_NAME: str = "hrms"
-POSTGRES_DATABASE_HOST: str = "localhost"
-POSTGRES_DATABASE_PORT: str = "5432"
-POSTGRES_DATABASE_USER: str = "postgres"
-POSTGRES_DATABASE_PASSWORD: str = "123456"
+# Railway PostgreSQL credentials
+POSTGRES_DATABASE_NAME: str = "railway"  # Changed from "hrms" to "railway"
+POSTGRES_DATABASE_HOST: str = "turntable.proxy.rlwy.net"  # Changed from "localhost"
+POSTGRES_DATABASE_PORT: str = "51332"  # Changed from "5432"
+POSTGRES_DATABASE_USER: str = "postgres"  # Same username
+POSTGRES_DATABASE_PASSWORD: str = "otmUYTINQWUFWVmcZTNsURFptWGmkhKm"  # Changed from "123456"
+
 
 POSTGRES_DATABASE_URL: str = (
     f"postgresql+asyncpg://{POSTGRES_DATABASE_USER}:{POSTGRES_DATABASE_PASSWORD}@{POSTGRES_DATABASE_HOST}:{POSTGRES_DATABASE_PORT}/{POSTGRES_DATABASE_NAME}"
