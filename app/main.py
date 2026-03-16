@@ -355,7 +355,7 @@ async def get_all_employees(
     employees = [
         {
             "user_id": row.user_id,
-            "user_company_id" : row.user_company_id,
+            "user_company_id" : row.user_company_id or "1",
             "firstname": row.firstname,
             "lastname": row.lastname,
             "emailaddress": row.emailaddress,
