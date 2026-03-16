@@ -249,8 +249,7 @@ async def add_employees(
             lastname=employee_data.lastName.strip(),
             emailaddress=employee_data.emailAddress.lower().strip(),
             department=employee_data.department.strip(),
-            isactive=True,
-            user_company_id="1"
+            isactive=True
         )
 
         db.add(new_user)
