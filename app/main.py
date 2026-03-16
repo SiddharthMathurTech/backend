@@ -62,7 +62,7 @@ class User(SQLAlchemyBase):
     isactive = Column(Boolean, nullable=False, server_default=text("true"))
     emailaddress = Column(String, nullable=False)
     department = Column(String, nullable=False)
-    user_company_id = Column(String, nullable=False)
+    user_company_id = Column(String, nullable=True)
 
 
 from sqlalchemy import Date, ForeignKey, DateTime
