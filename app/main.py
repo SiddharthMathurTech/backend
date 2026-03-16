@@ -27,6 +27,11 @@ POSTGRES_DATABASE_URL: str = (
     f"postgresql+asyncpg://{POSTGRES_DATABASE_USER}:{POSTGRES_DATABASE_PASSWORD}@{POSTGRES_DATABASE_HOST}:{POSTGRES_DATABASE_PORT}/{POSTGRES_DATABASE_NAME}"
 )
 
+
+POSTGRES_DATABASE_URL: str = (
+    f"postgresql+asyncpg://{POSTGRES_DATABASE_USER}:{POSTGRES_DATABASE_PASSWORD}@{POSTGRES_DATABASE_HOST}:{POSTGRES_DATABASE_PORT}/{POSTGRES_DATABASE_NAME}"
+)
+
 # Create an async database engine
 postgres_engine: AsyncEngine = create_async_engine(
     POSTGRES_DATABASE_URL,
@@ -574,15 +579,4 @@ async def health_check(db: AsyncSession = Depends(get_db)):
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail=f"Database connection failed: {str(e)}"
         )
-
-
-
-
-
-
-
-
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
 
